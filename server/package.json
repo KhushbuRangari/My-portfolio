@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KhushbuRangari/My-portfolio.git"
+  },
+  "keywords": [
+    "myportfolio",
+    "portfolio"
+  ],
+  "author": "KhushbuRangari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KhushbuRangari/My-portfolio/issues"
+  },
+  "homepage": "https://github.com/KhushbuRangari/My-portfolio#readme",
+  "description": ""
+}
