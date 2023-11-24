@@ -1,38 +1,125 @@
-.App {
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Open+Sans:wght@400;700&family=Poppins:wght@300;500;700&display=swap');
+/* font-family: 'Jost', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px; /* Adjust the border-radius for round edges */
+
+  /* Gradient background */
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+
+  /* Box shadow for a subtle lift effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+ 
+  background-color: #007bff;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+  background: linear-gradient(to right, #2e90f3, #00c7ff);
+}
+
+
+/* ****************************** */
+/* App.css */
+.app {
+  display: flex;
+}
+
+
+.sidebar {
+  width: 200px;
+  background: #ffffff;
+  /* color: white; */
+  font-family: 'Jost', sans-serif;;
+  padding: 20px;
+}
+
+.sidebar ul{
+  list-style: none;
+  font-family:'Jost', sans-serif;
+  line-height: 3;
+  font-size: 18px;
+  font-weight: 600;
   text-align: center;
 }
+/* .sidebar a {
+  text-decoration: none;
+  color: rgb(3, 3, 3);
+  margin-bottom: 10px;
+  display: block;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+} */
+/* :root {
+  --dynamic-background-color:#ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.sidebar-link {
+  color: black;
+  background-color: var(--dynamic-background-color,  #ffffff);
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sidebar-link:hover {
+  background-color: var(--dynamic-background-color,  #ffffff);
   color: white;
-}
+} */
+/* Add more styling based on your design preferences */
 
-.App-link {
-  color: #61dafb;
-}
+/* Add specific styling for color palette component if needed */
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.colorButton{
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
 }
