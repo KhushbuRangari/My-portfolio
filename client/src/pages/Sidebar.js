@@ -43,7 +43,7 @@ const Sidebar = ({ setClicked, selectedColor }) => {
 
   return (
     <div className="sidebar">
-      <h3 style={{ fontFamily: "'Jost', sans-serif", color: selectedColor.hex, textDecoration: "underline", textAlign: "center" }}>Khushbu</h3>
+      {/* <h3 style={{ fontFamily: "'Jost', sans-serif", color: selectedColor.hex, textDecoration: "underline", textAlign: "center" }}>Khushbu</h3> */}
       <ul className='sidebar-list'>
         {SideBarData.map((item, key) => (
           <StyledLi key={key} selectedColor={selectedColor.hex}>

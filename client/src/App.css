@@ -121,5 +121,48 @@ button:hover {
   padding: 0;
   margin: 0;
   position: absolute;
-  right: 0;
+  right: 10px;
+  top: 10px;
+}
+
+.sidebar-line{
+  position: absolute;
+  left: 20%;
+  top:10%;
+  border-left: 6px solid rgb(0, 0, 0);
+  height: 500px;
+
+}
+
+.layout .btn4{
+  /* background-color: #333 !important; */
+  position: absolute;
+  left: 20%;
+  top: 2%;
+width: 40px;
+height: 40px;
+
+color: white;
+text-align: center;
+}
+
+
+.container-fluid .toggled .sidebar {
+  transition:  margin-left 0.5s ease-out;
+  margin-left: -300px;
+ 
+  /* margin-left: -200px; */
+}
+
+.container-fluid .toggled .sidebar-line {
+  transition: margin-left 0.5s ease-out;
+  margin-left: -300px;
+}
+
+.container-fluid .toggled .btn2 {
+  transition: margin-left 0.5s ease-out;
+  margin-left:28px;
+  transform: scaleX(-1);
+  position: absolute;
+  top:2%
 }
