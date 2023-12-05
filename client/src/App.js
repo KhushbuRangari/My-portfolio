@@ -8,21 +8,20 @@ import Biography from "./pages/Biography";
 import Portfolio from "./pages/Portfolio";
 import Projects from "./pages/Projects";
 import Services from "./pages/Services";
-
+import Sidebar from "./pages/Sidebar";
 
 function App() {
-
   return (
     <BrowserRouter>
-   
       <Routes>
-        <Route path="/" element={<Layout />}>
+      
+          <Route path="/" element={<Sidebar />} />
           <Route path="/homepage" element={<Homepage />} />
           <Route path="/biography" element={<Biography />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/services" element={<Services />} />
-        </Route>
+       
       </Routes>
     </BrowserRouter>
   );

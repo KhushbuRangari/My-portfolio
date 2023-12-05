@@ -3,12 +3,13 @@ import React, { useState } from "react";
 import Sidebar from "../../pages/Sidebar";
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Layout({ children }) {
   const [clicked, setClicked] = useState("");
   const [toggle, setToggle] = useState(false);
   const [toggleSidebar, setToggleSidebar] = useState(true);
+  const navigate = useNavigate();
 
   const [color, setColor] = useColor("#000000");
 
@@ -18,7 +19,7 @@ function Layout({ children }) {
     });
   };
 
-  console.log(toggleSidebar, "togglesidebar");
+  console.log(color.hex, "selected color");
 
   const handleToggle = () => {
     setToggle((toggle) => {
@@ -28,23 +29,30 @@ function Layout({ children }) {
 
   return (
     <>
-      <div className={`container-fluid layout `}>
-        <div className="row">
-          <div className="col-3">
+     <div className={`container-fluid layout  `}>
+        <div className="row" >
+          <div className={`col-4 ${!toggleSidebar?"collapsed":""}`} >
             <main style={{ minHeight: "75vh", display: "flex" }}>
               <div
                 className={`toggle-sidebar ${!toggleSidebar ? "toggled" : ""}`}
               >
-                <div className="btn2" >
-                  <Link to="" className="btn4" style={{ background: `${color.hex}` }} onClick={handleToggleSidebar}>
-                    <i class="fa-solid fa-arrow-left" style={{width:"90%",height:"70%"}}></i>
+                <div className={`btn2 ${!toggleSidebar ? "toggled-btn" : ""}`}>
+                  <Link
+                    to=""
+                    className="btn4"
+                    style={{ background: `${color.hex}` }}
+                    onClick={handleToggleSidebar}
+                  >
+                    <i
+                      class="fa-solid fa-arrow-left"
+                      style={{ width: "90%", height: "70%" }}
+                    ></i>
                   </Link>
+                  <div className="sidebar-line "> </div>  
                 </div>
-                <div className="sidebar-line"> </div>
-                <div className="sidebar">
-                  {/* {toggleSidebar?   <p>Khushbu is my name you will me in new game</p>:"buuuuuuu"} */}
 
-                  <Sidebar setClicked={setClicked} selectedColor={color} />
+                <div className="sidebar ">
+                  <Sidebar setClicked={setClicked} selectedColor={color.hex} />
                 </div>
               </div>
 
@@ -104,9 +112,12 @@ function Layout({ children }) {
               )}
             </main>
           </div>
-          <div className="col-9"> {clicked}</div>
+          <div className={`col-8 ${!toggleSidebar?"expand-main":""}`} >{children}</div>
         </div>
-      </div>
+      </div> 
+
+
+   
     </>
   );
 }

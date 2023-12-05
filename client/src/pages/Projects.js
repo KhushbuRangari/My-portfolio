@@ -1,8 +1,14 @@
 import React from 'react'
+import Layout from '../components/layout/Layout'
 
 function Projects() {
   return (
-    <div>Projects</div>
+    <Layout>      <div className="container base projects">
+    <div className="row">
+      <div className="col-6">projects</div>
+      <div className="col-6">dsdd</div>
+    </div>
+  </div></Layout>
   )
 }
 

@@ -1,10 +1,4 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Open+Sans:wght@400;700&family=Poppins:wght@300;500;700&display=swap');
-/* font-family: 'Jost', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Poppins', sans-serif; */
-
-
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Open+Sans:wght@400;700&family=Poppins:wght@300;500;700&display=swap");
 
 * {
   margin: 0;
@@ -13,7 +7,7 @@ font-family: 'Poppins', sans-serif; */
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: #333;
 }
@@ -24,8 +18,13 @@ body {
   padding: 20px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   margin-bottom: 10px;
 }
@@ -44,18 +43,12 @@ button {
   padding: 10px 15px;
   font-size: 16px;
   border: none;
-  border-radius: 15px; /* Adjust the border-radius for round edges */
-
-  /* Gradient background */
+  border-radius: 15px;
   background: linear-gradient(to right, #4facfe, #00f2fe);
-
-  /* Box shadow for a subtle lift effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
- 
   background-color: #007bff;
   color: #fff;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   cursor: pointer;
 }
@@ -65,56 +58,28 @@ button:hover {
   background: linear-gradient(to right, #2e90f3, #00c7ff);
 }
 
-
-/* ****************************** */
-/* App.css */
 .app {
   display: flex;
 }
 
-
 .sidebar {
-  width: 200px;
+  width: 300px;
   background: #ffffff;
-  /* color: white; */
-  font-family: 'Jost', sans-serif;;
+  font-family: "Jost", sans-serif;
   padding: 20px;
+  margin-top: 10%;
 }
 
-.sidebar ul{
+.sidebar ul {
   list-style: none;
-  font-family:'Jost', sans-serif;
+  font-family: "Jost", sans-serif;
   line-height: 3;
   font-size: 18px;
   font-weight: 600;
   text-align: center;
 }
-/* .sidebar a {
-  text-decoration: none;
-  color: rgb(3, 3, 3);
-  margin-bottom: 10px;
-  display: block;
 
-} */
-/* :root {
-  --dynamic-background-color:#ffffff;
-}
-
-.sidebar-link {
-  color: black;
-  background-color: var(--dynamic-background-color,  #ffffff);
-
-}
-
-.sidebar-link:hover {
-  background-color: var(--dynamic-background-color,  #ffffff);
-  color: white;
-} */
-/* Add more styling based on your design preferences */
-
-/* Add specific styling for color palette component if needed */
-
-.colorButton{
+.colorButton {
   width: 40px;
   height: 40px;
   text-align: center;
@@ -125,44 +90,124 @@ button:hover {
   top: 10px;
 }
 
-.sidebar-line{
+.sidebar-line {
   position: absolute;
-  left: 20%;
-  top:10%;
+  left: 30%;
   border-left: 6px solid rgb(0, 0, 0);
   height: 500px;
-
 }
 
-.layout .btn4{
-  /* background-color: #333 !important; */
+.layout .btn2 {
   position: absolute;
-  left: 20%;
   top: 2%;
-width: 40px;
-height: 40px;
-
-color: white;
-text-align: center;
+  width: 50px;
+  left: 29%;
 }
 
-
-.container-fluid .toggled .sidebar {
-  transition:  margin-left 0.5s ease-out;
-  margin-left: -300px;
+.layout .toggled-btn {
+  transition: margin-left 0.45s ease-out;
+  margin-left: -350px;
+  left: 27%;
+  top: 2%;
+  transform: scaleX(-1);
+}
+.layout .toggled-btn .sidebar-line {
+  display: none;
+}
+.layout .btn4 {
+  /* position: absolute;
  
-  /* margin-left: -200px; */
+  top: 2%; */
+  width: 50px;
+  /* left: 13%; */
+  height: 80px;
+  color: white;
+  text-align: center;
 }
 
-.container-fluid .toggled .sidebar-line {
-  transition: margin-left 0.5s ease-out;
+.layout .toggle-sidebar {
+  width: 100%;
+}
+
+.layout .hidden-column .toggle-sidebar {
+  display: none;
+}
+
+.layout .toggled .sidebar {
+  transition: margin-left 0.3s ease-out;
   margin-left: -300px;
+  width: 0;
 }
 
-.container-fluid .toggled .btn2 {
+/* .layout .toggled .sidebar-line {
+  transition: margin-left 0.45s ease-out;
+  margin-left: -350px;
+  left: 26%;
+  top: 7%;
+} */
+
+/* .layout .toggled .btn2 {
   transition: margin-left 0.5s ease-out;
-  margin-left:28px;
+  margin-left: 18px;
   transform: scaleX(-1);
   position: absolute;
-  top:2%
+  top: 2%;
+} */
+
+.layout .expand-main {
+  /* width: 80% !important; */
+  transition: margin-left 0.9s ease-out;
+  width: 90%;
+  margin-left: 2%;
+  /* position: relative;
+  top: 2%; */
+}
+
+.base {
+  margin-top: 10%;
+}
+
+.homepage {
+  margin-top: 10%;
+
+}
+
+.homepage .effect{
+  width: 40%;
+ 
+}
+.homepage .data{
+  width: 60%;
+}
+.homepage .effect:hover{
+  background-color: red;
+  transition: width 3s;
+}
+.homepage .background {
+  position: absolute;
+  top: 15%;
+  /* left: 47%; */
+  padding: 3%;
+  width: 28%;
+  height: 200px;
+  background-color: rgb(236, 203, 13);
+ 
+  z-index: 0;
+}
+
+.homepage img {
+  position: relative;
+  bottom: 12%;
+  left: 11%;
+  border: 10px solid #0e0d0d;
+  border-radius: 4px;
+  padding: 10px;
+  width: 280px;
+}
+
+.homepage p{
+  margin-left: 18%;
+}
+.layout .collapsed {
+  width: 0;
 }
