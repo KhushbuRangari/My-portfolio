@@ -1,19 +1,17 @@
 // Layout.js
 import React, { useState, useEffect } from "react";
-// import Sidebar from "../../pages/Sidebar";
-import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css";
-import { useNavigate } from "react-router-dom";
 import { SideBarData } from "../../pages/SideBarData";
 import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
+import { Link } from "react-router-dom";
 
 const StyledLi = styled.li`
   list-style: none;
   transition: background-color 0.3s ease;
 
-  &:hover {
-    background-color: ${(props) => props.selectedColor};
+  " &:hover": {
+    background-color: ${(props) => props.x};
     color: white;
   }
 `;
@@ -22,33 +20,36 @@ const StyledLink = styled(ScrollLink)`
   color: gray;
   text-decoration: none;
 
-  &:hover {
+  "&:hover": {
     text-decoration: none;
-    background-color: ${(props) => props.selectedColor};
+    background-color: ${(props) => props.x};
     color: white;
   }
 
   &.active {
-    background-color: ${(props) => props.selectedColor};
+    background-color: ${(props) => props.x};
     color: white;
   }
 `;
-function Layout({ children }) {
-  // const [clicked, setClicked] = useState("");
-  const [toggle, setToggle] = useState(false);
+
+function Layout({ children, color }) {
   const [toggleSidebar, setToggleSidebar] = useState(true);
-  // const navigate = useNavigate();
   const [activeLink, setActiveLink] = useState("");
-  const [color, setColor] = useColor("#000000");
+  // const [isHovering, setIsHovering] = useState(false);
 
   
+  // const handleMouseEnter = () => {
+  //   setIsHovering(true);
+  // };
+  // const handleMouseLeave = () => {
+  //   setIsHovering(false);
+  // };
+
   const handleChange = (value) => {
-
-    console.log(value,"value");
-    const sectionId = value.replace("/", ""); 
-    const targetSection = sectionId; 
+    const sectionId = value.replace("/", "");
+    const targetSection = sectionId;
     const sectionElement = document.getElementById(targetSection);
-  
+
     if (sectionElement) {
       sectionElement.scrollIntoView();
       console.log(`Scrolling to ${targetSection}`);
@@ -58,12 +59,6 @@ function Layout({ children }) {
   };
   const handleToggleSidebar = () => {
     setToggleSidebar((toggle) => {
-      return !toggle;
-    });
-  };
-
-  const handleToggle = () => {
-    setToggle((toggle) => {
       return !toggle;
     });
   };
@@ -90,7 +85,7 @@ function Layout({ children }) {
       <div className={`container-fluid layout  `}>
         <div className="row">
           <div className={`col-4 ${!toggleSidebar ? "collapsed" : ""}`}>
-            <main style={{ minHeight: "75vh", display: "flex" }}>
+            <main style={{display: "flex"}}>
               <div
                 className={`toggle-sidebar ${!toggleSidebar ? "toggled" : ""}`}
               >
@@ -98,7 +93,7 @@ function Layout({ children }) {
                   <button
                     to=""
                     className="btn4"
-                    style={{ background: `${color.hex}` }}
+                    style={{ background: `${color}` }}
                     onClick={handleToggleSidebar}
                   >
                     <i
@@ -117,7 +112,7 @@ function Layout({ children }) {
                         fontFamily: "'Jost', sans-serif",
                         fontWeight: "700",
                         fontSize: "40px",
-                        color: color.hex,
+                        color: `${color}`,
                         textDecoration: "underline",
                         textAlign: "center",
                       }}
@@ -125,15 +120,16 @@ function Layout({ children }) {
                       Khushbu
                     </h3>
                     <ul className="sidebar-list">
-                      {SideBarData.map((item, key) => (
-                        <StyledLi key={key} selectedColor={color.hex}>
+                      {SideBarData.map((item,key) => (
+                        <StyledLi key={key} >
                           <StyledLink
+                          
                             activeClass="active"
                             spy={true}
                             smooth={true}
                             offset={-70}
                             duration={500}
-                            to={`/homepage/${item.link}`} // Make sure this matches the ID format
+                            to={`/homepage/${item.link}`}
                             onClick={() => handleChange(item.link)}
                             className={`${
                               `/homepage/${item.link}` === activeLink
@@ -149,61 +145,6 @@ function Layout({ children }) {
                   </div>
                 </div>
               </div>
-
-              <button className="colorButton" onClick={handleToggle}>
-                <i class="fa-solid fa-wand-magic-sparkles"></i>
-              </button>
-
-              {toggle ? (
-                <>
-                  <div
-                    className="toggle"
-                    style={{
-                      display: "block",
-                      position: "absolute",
-                      top: "30px",
-                      right: "20px",
-                      marginLeft: "200px",
-                      padding: "20px",
-                      backgroundColor: color,
-                    }}
-                  >
-                    <div width={100} height={100}>
-                      {" "}
-                      <ColorPicker
-                        hideInput={["rgb", "hsv"]}
-                        color={color}
-                        onChange={setColor}
-                      />
-                    </div>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div
-                    className="toggle"
-                    style={{
-                      display: "none",
-                      transition: "opacity 0.5s ease-out",
-                      position: "absolute",
-                      top: "0",
-                      right: "0",
-                      marginLeft: "200px",
-                      padding: "20px",
-                      backgroundColor: color,
-                    }}
-                  >
-                    <div width={100} height={100}>
-                      {" "}
-                      <ColorPicker
-                        hideInput={["rgb", "hsv"]}
-                        color={color}
-                        onChange={setColor}
-                      />
-                    </div>
-                  </div>
-                </>
-              )}
             </main>
           </div>
           <div className={`col-8 ${!toggleSidebar ? "expand-main" : ""}`}>

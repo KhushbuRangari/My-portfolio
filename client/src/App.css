@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Open+Sans:wght@400;700&family=Poppins:wght@300;500;700&display=swap");
 
+:root{
+  --main-color:rgb(247, 212, 16)
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +13,7 @@
 body {
   font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  color: #333;
+  color: #000000;
 }
 
 .container {
@@ -36,6 +40,8 @@ a {
 
 a:hover {
   text-decoration: underline;
+  background-color: var(--main-color);
+  color: black;
 }
 
 button {
@@ -77,7 +83,23 @@ button:hover {
   font-size: 18px;
   font-weight: 600;
   text-align: center;
+
 }
+
+.sidebar li {
+color: black;
+
+}
+
+.sidebar li a:link {
+  text-decoration: none;
+  }
+.sidebar li:hover{
+  background-color: var(--main-color);
+  color: black;
+  text-decoration: none;
+}
+
 
 .colorButton {
   width: 40px;
@@ -115,12 +137,7 @@ button:hover {
   display: none;
 }
 .layout .btn4 {
-  /* position: absolute;
- 
-  top: 2%; */
   width: 50px;
-  /* left: 13%; */
-  height: 80px;
   color: white;
   text-align: center;
 }
@@ -128,6 +145,7 @@ button:hover {
 .layout .toggle-sidebar {
   width: 100%;
   position: fixed;
+
 }
 
 .layout .hidden-column .toggle-sidebar {
@@ -172,21 +190,19 @@ button:hover {
   margin-top: 20%;
 }
 
-.homepage .effect{
+.homepage .effect {
   width: 40%;
   /* transition: width .9s ease-in-out; */
-
 }
-.homepage .data{
+.homepage .data {
   width: 60%;
 }
-.homepage .effect:hover{
-/* width: 100%; */
-transform: translate3d(-4.50195px, -6.92986px, 0px);
-transform-style: preserve-3d;
-backface-visibility: hidden;
+.homepage .effect:hover {
+  /* width: 100%; */
+  transform: translate3d(-4.50195px, -6.92986px, 0px);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
 }
-
 
 .homepage .background {
   /* position: absolute; */
@@ -194,8 +210,8 @@ backface-visibility: hidden;
   /* padding: 3%; */
   width: 300px;
   height: 200px;
-  background-color: rgb(236, 203, 13);
-/*  
+  background-color:var(--main-color)
+  /*  
   z-index: 0; */
 }
 
@@ -209,18 +225,18 @@ backface-visibility: hidden;
   width: 250px;
 }
 
-.homepage p{
+.homepage p {
   margin-left: 2%;
   color: black;
 }
 .layout .collapsed {
   width: 0;
 }
-.arrow{
+.arrow {
   width: 100%;
 }
 
-.divider{
+.divider {
   /* position: absolute;
   left: 30%; */
   border: 3px solid rgb(0, 0, 0);
@@ -228,7 +244,7 @@ backface-visibility: hidden;
   width: 780px;
 }
 .upArrow {
- background-color: #0e0d0d;
+  background-color: #0e0d0d;
   width: 48px;
   /* margin-left: 90%; */
   /* height: 80px; */

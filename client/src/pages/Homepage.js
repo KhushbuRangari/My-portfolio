@@ -6,7 +6,7 @@ import Projects from "./Projects";
 import Services from "./Services";
 import { Link } from "react-router-dom";
 
-function Homepage() {
+function Homepage({color}) {
   const [contentStyle, setContentStyle] = useState({});
 
   function handleMouse(e) {
@@ -23,15 +23,15 @@ function Homepage() {
   }
   function handleToggleSidebar() {}
   return (
-    <Layout>
+    <Layout color={color}>
       <div className="homepage" id="section1"  onMouseMove={handleMouse}>
         <div className="content d-flex d-flex-row">
           <div className="effect" style={contentStyle}>
-            <div className="background"></div>
+            <div className="background" style={{ backgroundColor:color}}></div>
             <img src="/mypic.jpg" width={"250px"} alt="" />
           </div>
 
-          <p className="data">
+          <div className="data">
             <h1>WEBSITE DEVELOPER</h1>
             <hr
               style={{
@@ -42,14 +42,14 @@ function Homepage() {
             />
             Professional Full Stack Developer based on Pune. Developing my
             skills and building a road-map for the future.
-          </p>
+          </div>
         </div>
       </div>
       <span className="arrow d-flex d-flex-row">
         <div className="divider"></div>
         <Link to="/homepage" className="upArrow" onClick={handleToggleSidebar}>
           <i
-            class="fa-solid fa-arrow-up"
+            className="fa-solid fa-arrow-up"
             style={{ width: "90%", height: "70%" }}
           ></i>
         </Link>
