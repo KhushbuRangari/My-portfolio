@@ -8,8 +8,6 @@ import { Link } from "react-router-dom";
 
 function Homepage() {
   const [contentStyle, setContentStyle] = useState({});
-  const [activeLink, setActiveLink] = useState(""); 
-
 
   function handleMouse(e) {
     let x = e.clientX;
@@ -23,12 +21,10 @@ function Homepage() {
       backfaceVisibility: "hidden",
     });
   }
-function handleToggleSidebar() {
-  
-}
+  function handleToggleSidebar() {}
   return (
-    <Layout activeLink={activeLink}  setActiveLink={setActiveLink}>
-      <div className="homepage" onMouseMove={handleMouse}>
+    <Layout>
+      <div className="homepage" id="section1"  onMouseMove={handleMouse}>
         <div className="content d-flex d-flex-row">
           <div className="effect" style={contentStyle}>
             <div className="background"></div>
@@ -49,20 +45,19 @@ function handleToggleSidebar() {
           </p>
         </div>
       </div>
-      <span className="arrow d-flex d-flex-row">  <div className="divider"></div> <Link
-                    to=""
-                    className="upArrow"
-                    onClick={handleToggleSidebar}
-                  >
-                    <i
-                      class="fa-solid fa-arrow-up"
-                      style={{ width: "90%", height: "70%" }}
-                    ></i>
-                  </Link></span>
-      <Biography />
-      <Portfolio />
-      <Projects />
-      <Services />
+      <span className="arrow d-flex d-flex-row">
+        <div className="divider"></div>
+        <Link to="/homepage" className="upArrow" onClick={handleToggleSidebar}>
+          <i
+            class="fa-solid fa-arrow-up"
+            style={{ width: "90%", height: "70%" }}
+          ></i>
+        </Link>
+      </span>
+      <Biography id="section2" />
+      <Portfolio id="section3" />
+      <Projects id="section4" />
+      <Services id="section5" />
     </Layout>
   );
 }

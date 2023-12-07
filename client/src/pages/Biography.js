@@ -4,7 +4,7 @@ import Layout from "../components/layout/Layout";
 function Biography() {
   return (
     <Layout>
-      <div id="biography" className=" base biography">
+      <div id="section2" className=" base biography">
       
             <h1>BIOGRAPHY</h1>
             <p>
