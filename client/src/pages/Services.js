@@ -3,9 +3,9 @@ import Layout from '../components/layout/Layout'
 
 function Services() {
   return (
-    <Layout>      <div className="container base services">
+    <Layout>      <div id="services"  className="container base services">
     <div className="row">
-      <div className="col-6">Services</div>
+      <div className="col-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut repudiandae officia eaque dolore ratione voluptatibus dicta. Harum perspiciatis aut libero?</div>
       <div className="col-6">dsdd</div>
     </div>
   </div></Layout>

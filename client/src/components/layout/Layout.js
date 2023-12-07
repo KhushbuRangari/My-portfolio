@@ -1,16 +1,16 @@
 // Layout.js
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Sidebar from "../../pages/Sidebar";
 import { ColorPicker, useColor } from "react-color-palette";
 import "react-color-palette/css";
 import { Link, useNavigate } from "react-router-dom";
 
-function Layout({ children }) {
+function Layout({ children,activeLink,setActiveLink }) {
   const [clicked, setClicked] = useState("");
   const [toggle, setToggle] = useState(false);
   const [toggleSidebar, setToggleSidebar] = useState(true);
   const navigate = useNavigate();
-
+  // const [activeLink, setActiveLink] = useState("");
   const [color, setColor] = useColor("#000000");
 
   const handleToggleSidebar = () => {
@@ -19,14 +19,32 @@ function Layout({ children }) {
     });
   };
 
-  console.log(color.hex, "selected color");
-
   const handleToggle = () => {
     setToggle((toggle) => {
       return !toggle;
     });
   };
 
+
+  // *********************************
+
+  const handleScroll = () => {
+    const currentPosition = window.scrollY;
+    const sectionHeight = 500;
+    const activeSection = Math.floor(currentPosition / sectionHeight) + 1;
+
+    setActiveLink(`/section${activeSection}`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []); // Run this effect only once on component mount
+
+  // ************************************
   return (
     <>
      <div className={`container-fluid layout  `}>
@@ -52,7 +70,7 @@ function Layout({ children }) {
                 </div>
 
                 <div className="sidebar ">
-                  <Sidebar setClicked={setClicked} selectedColor={color.hex} />
+                  <Sidebar setClicked={setClicked} selectedColor={color.hex} activeLink={activeLink} />
                 </div>
               </div>
 

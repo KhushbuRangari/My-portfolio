@@ -94,7 +94,7 @@ button:hover {
   position: absolute;
   left: 30%;
   border-left: 6px solid rgb(0, 0, 0);
-  height: 500px;
+  height: 100vh;
 }
 
 .layout .btn2 {
@@ -127,6 +127,7 @@ button:hover {
 
 .layout .toggle-sidebar {
   width: 100%;
+  position: fixed;
 }
 
 .layout .hidden-column .toggle-sidebar {
@@ -157,7 +158,7 @@ button:hover {
 .layout .expand-main {
   /* width: 80% !important; */
   transition: margin-left 0.9s ease-out;
-  width: 90%;
+  width: 100%;
   margin-left: 2%;
   /* position: relative;
   top: 2%; */
@@ -168,46 +169,69 @@ button:hover {
 }
 
 .homepage {
-  margin-top: 10%;
-
+  margin-top: 20%;
 }
 
 .homepage .effect{
   width: 40%;
- 
+  /* transition: width .9s ease-in-out; */
+
 }
 .homepage .data{
   width: 60%;
 }
 .homepage .effect:hover{
-  background-color: red;
-  transition: width 3s;
+/* width: 100%; */
+transform: translate3d(-4.50195px, -6.92986px, 0px);
+transform-style: preserve-3d;
+backface-visibility: hidden;
 }
+
+
 .homepage .background {
-  position: absolute;
-  top: 15%;
-  /* left: 47%; */
-  padding: 3%;
-  width: 28%;
+  /* position: absolute; */
+  /* top: 15%; */
+  /* padding: 3%; */
+  width: 300px;
   height: 200px;
   background-color: rgb(236, 203, 13);
- 
-  z-index: 0;
+/*  
+  z-index: 0; */
 }
 
 .homepage img {
   position: relative;
-  bottom: 12%;
-  left: 11%;
+  bottom: 49%;
+  left: 7%;
   border: 10px solid #0e0d0d;
   border-radius: 4px;
-  padding: 10px;
-  width: 280px;
+  padding: 20px;
+  width: 250px;
 }
 
 .homepage p{
-  margin-left: 18%;
+  margin-left: 2%;
+  color: black;
 }
 .layout .collapsed {
   width: 0;
+}
+.arrow{
+  width: 100%;
+}
+
+.divider{
+  /* position: absolute;
+  left: 30%; */
+  border: 3px solid rgb(0, 0, 0);
+  height: 6px;
+  width: 780px;
+}
+.upArrow {
+ background-color: #0e0d0d;
+  width: 48px;
+  /* margin-left: 90%; */
+  /* height: 80px; */
+  color: rgb(252, 251, 251);
+  text-align: center;
 }

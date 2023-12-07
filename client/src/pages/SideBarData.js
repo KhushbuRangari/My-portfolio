@@ -8,12 +8,12 @@ export const SideBarData =[
     },
     {
         title:"BIOGRAPHY",
-        link:"/biography",
+        link:"/section1",
         icon:""
     },
     {
         title:"PORTFOLIO",
-        link:"/portfolio",
+        link:"/section2",
         icon:""
     },
     {
