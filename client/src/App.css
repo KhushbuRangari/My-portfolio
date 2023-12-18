@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Open+Sans:wght@400;700&family=Poppins:wght@300;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Andada+Pro:wght@700&family=Jost:wght@300;400;500;600&family=Open+Sans:wght@400;700&family=Poppins:wght@300;500;700&display=swap');
+
+
+/* font-family: 'Andada Pro', serif;
+font-family: 'Jost', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Poppins', sans-serif; */
 
 :root{
   --main-color:rgb(247, 212, 16)
@@ -144,7 +150,7 @@ color: black;
 
 .layout .toggle-sidebar {
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
 
 }
 
@@ -178,8 +184,14 @@ color: black;
   transition: margin-left 0.9s ease-out;
   width: 100%;
   margin-left: 2%;
+  margin-top: 1px;
+  position: absolute;
   /* position: relative;
   top: 2%; */
+}
+
+.expand-main .homepage .background img{
+  width: 400px;
 }
 
 .base {
@@ -190,6 +202,19 @@ color: black;
   margin-top: 20%;
 }
 
+
+.expand-main .homepage .effect .background{
+  width:80% ;
+
+}
+.expand-main .homepage .effect img{
+  width:80% ;
+  
+}
+
+.expand-main .divider{
+
+}
 .homepage .effect {
   width: 40%;
   /* transition: width .9s ease-in-out; */
@@ -229,7 +254,7 @@ color: black;
   margin-left: 2%;
   color: black;
 }
-.layout .collapsed {
+.layout .collapsedd {
   width: 0;
 }
 .arrow {
@@ -241,13 +266,122 @@ color: black;
   left: 30%; */
   border: 3px solid rgb(0, 0, 0);
   height: 6px;
-  width: 780px;
+  width:90%;
 }
 .upArrow {
-  background-color: #0e0d0d;
+  background-color: var(--main-color);
   width: 48px;
   /* margin-left: 90%; */
   /* height: 80px; */
   color: rgb(252, 251, 251);
   text-align: center;
+}
+
+.biography .container ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.biography .container li {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+.biography .container li p{
+  border: 4px solid #444;
+    background-color: #f2f2f2;
+    padding: 7px 26px;
+    line-height: 1.6;
+    margin: 0 0 30px 30px;
+    font-size: 17px;
+    text-align: center;
+}
+.biography .cv .download {
+
+ width: 280px;
+ height: 190px;
+
+}
+
+
+.biography .cv .download span{
+
+/* 
+  width: 100%;
+  height: 100%; */
+}
+
+.biography .cv .download i{
+ /* position: absolute; */
+  font-size: 50px;
+  margin-top: 30%;
+}
+
+
+.decorLine{
+ 
+}
+
+.decorLine .small{
+    height: 60px;
+    border-left: 2px solid black;
+}
+
+.decorLine .long{
+  height: 100px;
+  border-left: 2px solid black;
+}
+ .biography .hovered .small{
+    transform: translateY(10%);
+}
+.biography .hovered .long{
+  transform: translateY(-3%);
+}
+
+.biography .exp .exp-btn{
+  width: 150px;
+  height: 40px;
+  /* background: linear-gradient(to right,var(--main-color), #dff4f5) !important; */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  /* background-color: var(--main-color)!important; */
+  border: none;
+  border-bottom: 2px solid var(--main-color);
+  display: inline-block;
+  margin-right: 5px;
+}
+.progress{
+  border: 4px solid black;
+  padding: 3px ;
+}
+.progress-bar{
+  background-color: var(--main-color)!important; 
+  color: black;
+  font-family:  "Poppins", sans-serif;
+  font-size: large;
+}
+
+.GitHubProfile h2{
+  text-decoration: underline;
+  text-decoration-color: var(--main-color);
+}
+
+.GitHubProfile img{
+  border: 3px solid black;
+  padding: 10px;
+}
+.GitHubProfile img:hover{
+  border: 2px solid var(--main-color);
+  transition: all .5s ease-in-out;
+  width: 120px;
+  height: 140px;
+}
+.GitHubProfile h3{
+  color: var(--main-color);
+}
+
+.projects img{
+  width: 300px;
+  height: 300px;
 }

@@ -4,7 +4,7 @@ import "react-color-palette/css";
 import { SideBarData } from "../../pages/SideBarData";
 import styled from "styled-components";
 import { Link as ScrollLink } from "react-scroll";
-import { Link } from "react-router-dom";
+
 
 const StyledLi = styled.li`
   list-style: none;
@@ -84,12 +84,12 @@ function Layout({ children, color }) {
     <>
       <div className={`container-fluid layout  `}>
         <div className="row">
-          <div className={`col-4 ${!toggleSidebar ? "collapsed" : ""}`}>
-            <main style={{display: "flex"}}>
+          <div className={` ${!toggleSidebar ? "collapsedd" : "col-4"}`}>
+            <div >
               <div
                 className={`toggle-sidebar ${!toggleSidebar ? "toggled" : ""}`}
               >
-                <div className={`btn2 ${!toggleSidebar ? "toggled-btn" : ""}`}>
+                <div className={`btn2 ${!toggleSidebar ? "toggled-btn" : ""}`} style={{ position:"fixed"}}>
                   <button
                     to=""
                     className="btn4"
@@ -106,7 +106,7 @@ function Layout({ children, color }) {
 
                 <div className="sidebar ">
                   {/* <Sidebar setClicked={setClicked} selectedColor={color.hex} activeLink={activeLink} /> */}
-                  <div className="sidebar">
+                  <div className="sidebar" style={{ position:"fixed"}}>
                     <h3
                       style={{
                         fontFamily: "'Jost', sans-serif",
@@ -115,6 +115,7 @@ function Layout({ children, color }) {
                         color: `${color}`,
                         textDecoration: "underline",
                         textAlign: "center",
+                       
                       }}
                     >
                       Khushbu
@@ -145,7 +146,7 @@ function Layout({ children, color }) {
                   </div>
                 </div>
               </div>
-            </main>
+            </div>
           </div>
           <div className={`col-8 ${!toggleSidebar ? "expand-main" : ""}`}>
             {children}

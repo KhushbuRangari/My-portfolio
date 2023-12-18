@@ -3,10 +3,11 @@ import Layout from "../components/layout/Layout";
 import Biography from "./Biography";
 import Portfolio from "./Portfolio";
 import Projects from "./Projects";
-import Services from "./Services";
-import { Link } from "react-router-dom";
+import GitHubProfile from "./GitHubProfile";
+import Divider from "./Divider";
 
 function Homepage({color}) {
+
   const [contentStyle, setContentStyle] = useState({});
 
   function handleMouse(e) {
@@ -15,13 +16,13 @@ function Homepage({color}) {
 
     setContentStyle({
       transform: `translate3d(${(x - window.innerWidth / 2) / 25}px, ${
-        (y - window.innerHeight / 2) / 25
+        (y - window.innerHeight / 2) / 15
       }px, 0px)`,
       transformStyle: "preserve-3d",
       backfaceVisibility: "hidden",
     });
   }
-  function handleToggleSidebar() {}
+
   return (
     <Layout color={color}>
       <div className="homepage" id="section1"  onMouseMove={handleMouse}>
@@ -45,19 +46,17 @@ function Homepage({color}) {
           </div>
         </div>
       </div>
-      <span className="arrow d-flex d-flex-row">
-        <div className="divider"></div>
-        <Link to="/homepage" className="upArrow" onClick={handleToggleSidebar}>
-          <i
-            className="fa-solid fa-arrow-up"
-            style={{ width: "90%", height: "70%" }}
-          ></i>
-        </Link>
-      </span>
-      <Biography id="section2" />
+     <Divider/>
+
+     
+      <Biography id="section2" color={color} />
+      < Divider/>
       <Portfolio id="section3" />
+      < Divider/>
       <Projects id="section4" />
-      <Services id="section5" />
+      < Divider/>
+      <GitHubProfile id="section5" />
+      
     </Layout>
   );
 }

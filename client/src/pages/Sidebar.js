@@ -1,7 +1,7 @@
 import React from "react";
 import { SideBarData } from "./SideBarData";
 import styled from "styled-components";
-import { useNavigate, Link as RouterLink } from "react-router-dom";
+// import { useNavigate} from "react-router-dom";
 import { Link as ScrollLink } from 'react-scroll';
 
 const StyledLi = styled.li`
@@ -14,22 +14,22 @@ const StyledLi = styled.li`
   }
 `;
 
-const StyledLink = styled(RouterLink)`
-  color: gray;
-  text-decoration: none;
-  &:hover {
-    text-decoration: none;
-    background-color: ${(props) => props.selectedColor};
-    color: white;
-  }
-`;
+// const StyledLink = styled(RouterLink)`
+//   color: gray;
+//   text-decoration: none;
+//   &:hover {
+//     text-decoration: none;
+//     background-color: ${(props) => props.selectedColor};
+//     color: white;
+//   }
+// `;
 
 const Sidebar = ({ selectedColor, activeLink }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleChange = (value) => {
     const sectionId = value.replace('/', ''); // Remove the leading slash
-    const targetSection = `section${sectionId}`;
+    // const targetSection = `section${sectionId}`;
     console.log(`Scrolling to ${sectionId}`);
   };
 
@@ -38,7 +38,7 @@ const Sidebar = ({ selectedColor, activeLink }) => {
     <div className="sidebar">
       <h3
         style={{
-          fontFamily: "'Jost', sans-serif",
+          fontFamily: "'Poppins', sans-serif;",
           fontWeight: "700",
           fontSize: "40px",
           color: selectedColor,

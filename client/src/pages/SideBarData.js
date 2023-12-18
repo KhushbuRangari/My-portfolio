@@ -1,4 +1,3 @@
-import React from 'react'
 
 export const SideBarData =[
     {
@@ -22,7 +21,7 @@ export const SideBarData =[
         icon:""
     },
     {
-        title:"SERVICES",
+        title:"GitHubProfile",
         link:"/section5",
         icon:""
     }

@@ -1,27 +1,28 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Homepage from "./pages/Homepage";
 import Layout from "./components/layout/Layout";
-import Biography from "./pages/Biography";
-import Portfolio from "./pages/Portfolio";
-import Projects from "./pages/Projects";
-import Services from "./pages/Services";
-import Sidebar from "./pages/Sidebar";
+// import Biography from "./pages/Biography";
+// import Portfolio from "./pages/Portfolio";
+// import Projects from "./pages/Projects";
+// import GitHubProfile from "./pages/GitHubProfile";
+// import Sidebar from "./pages/Sidebar";
 
 import { ColorPicker, useColor } from "react-color-palette";
 
 function App() {
-  const [color, setColor] = useColor("#000000");
+  const [color, setColor] = useColor("#dfabf1");
   const [toggle, setToggle] = useState(false);
 
-
+  document.documentElement.style.setProperty('--main-color',color.hex);
+  useEffect(()=>{},[])
   const handleToggle = () => {
     setToggle((toggle) => {
       return !toggle;
     });
-    console.log(toggle,"app.js");
+  
   };
   return (
     <BrowserRouter>
@@ -43,12 +44,11 @@ function App() {
             zIndex: 1, // Ensure color picker is rendered below the button
           }}
         >
-          <div style={{ width: "250px"}}>
+          <div style={{ width: "250px",position:"sticky"}}>
             <ColorPicker
               hideInput={["rgb", "hsv"]}
               color={color}
-              onChange={(v) => {
-                setColor(v);
+              onChange={(v) => { setColor(v);
               }}
             />
           </div>
