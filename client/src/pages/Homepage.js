@@ -29,7 +29,7 @@ function Homepage({color}) {
         <div className="content d-flex d-flex-row">
           <div className="effect" style={contentStyle}>
             <div className="background" style={{ backgroundColor:color}}></div>
-            <img src="/mypic.jpg" width={"250px"} alt="" />
+            <img src="/mypic.jpg" alt="" />
           </div>
 
           <div className="data">

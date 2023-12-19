@@ -84,7 +84,7 @@ function Layout({ children, color }) {
     <>
       <div className={`container-fluid layout  `}>
         <div className="row">
-          <div className={` ${!toggleSidebar ? "collapsedd" : "col-4"}`}>
+          <div className={` ${!toggleSidebar ? "collapsedd" : "col-sm-4 .d-none .d-sm-block"}`}>
             <div >
               <div
                 className={`toggle-sidebar ${!toggleSidebar ? "toggled" : ""}`}
@@ -148,7 +148,7 @@ function Layout({ children, color }) {
               </div>
             </div>
           </div>
-          <div className={`col-8 ${!toggleSidebar ? "expand-main" : ""}`}>
+          <div className={`col-sm-8 ${!toggleSidebar ? "expand-main" : ""}`}>
             {children}
           </div>
         </div>

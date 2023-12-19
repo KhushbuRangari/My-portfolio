@@ -75,10 +75,10 @@ button:hover {
 }
 
 .sidebar {
-  width: 300px;
+  width: 25%;
   background: #ffffff;
   font-family: "Jost", sans-serif;
-  padding: 20px;
+  /* padding: 3%; */
   margin-top: 10%;
 }
 
@@ -191,7 +191,7 @@ color: black;
 }
 
 .expand-main .homepage .background img{
-  width: 400px;
+  /* width: 10%; */
 }
 
 .base {
@@ -208,7 +208,7 @@ color: black;
 
 }
 .expand-main .homepage .effect img{
-  width:80% ;
+  width:60% ;
   
 }
 
