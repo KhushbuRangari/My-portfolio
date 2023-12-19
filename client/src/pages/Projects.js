@@ -10,6 +10,9 @@ function Projects() {
         <h2 className="text-center">PROJECTS</h2>
         <div className="row">
           <div className="card-group">
+            <Link to={"https://portfoliokhushbu.netlify.app"}  target={"_blank"}>
+              <Card title={"Portfolio"} imgSrc={"/projects.jpg"} />
+            </Link>
             <Link to={"https://countryinformations.netlify.app"}  target={"_blank"}>
               <Card title={"Country Info"} imgSrc={"/projects.jpg"} />
             </Link>
