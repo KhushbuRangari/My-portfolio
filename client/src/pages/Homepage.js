@@ -22,6 +22,25 @@ function Homepage({color}) {
       backfaceVisibility: "hidden",
     });
   }
+//for otpless login 
+const [userInfo, setUserInfo] = useState(null);
+
+useEffect(() => {
+  // Dynamically load OTPLESS SDK script
+  const script = document.createElement("script");
+  script.id = "otpless-sdk";
+  script.type = "text/javascript";
+  script.src = "https://otpless.com/v2/auth.js";
+  script.setAttribute("data-appid", "RM2I31PAOMTTAJ0UGFLP"); // Replace YOUR_APP_ID with your actual app ID
+  document.head.appendChild(script);
+
+  // Initialize OTPLESS callback function
+  window.otpless = (otplessUser) => {
+    // Set user information state
+    setUserInfo(otplessUser);
+
+  };
+}, []);
 
   return (
     <Layout color={color}>
@@ -31,7 +50,7 @@ function Homepage({color}) {
             <div className="background" style={{ backgroundColor:color}}></div>
             <img src="/mypic.jpg" alt="" />
           </div>
-
+           <div id="otpless-login-page"></div>
           <div className="data">
             <h1>WEBSITE DEVELOPER</h1>
             <hr
